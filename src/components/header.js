@@ -2,10 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteData }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#FAFAFA`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -13,30 +13,42 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1.0rem 1.0rem`,
+        display: `flex`,
+        justifyContent: `space-between`
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h2 style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `black`,
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          {siteData.title}
         </Link>
-      </h1>
+      </h2>
+      <nav>
+        <ul className="react-menu">
+          {siteData.navigation.map((item, index) => (
+            // Without the `key`, React will fire a key warning
+            <React.Fragment key={index}>
+              <li><Link to={item.url}>{item.name}</Link></li>
+            </React.Fragment>
+          ))}
+        </ul>
+      </nav>
     </div>
   </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  siteData: PropTypes.any,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteData: ``,
 }
 
 export default Header

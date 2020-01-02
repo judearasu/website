@@ -61,7 +61,7 @@ dfn {
   font-style: italic;
 }
 h1 {
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0.67em 0;
 }
 mark {
@@ -234,7 +234,7 @@ h1 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.1;
 }
 h2 {
@@ -619,4 +619,21 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+ul.react-menu{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  margin: 0 auto;
+  list-style: none;
+}
+
+ul.react-menu li{
+  margin: 0 12px;
+}
+
+ul.react-menu li a{
+  font-size: 1.0rem;
+  text-decoration: none;
 }
