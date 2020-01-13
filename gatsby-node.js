@@ -5,3 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+  
+'use strict';
+
+exports.createPages = require('./node-apis/create-pages');
