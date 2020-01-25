@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { formatReadingTime, countText } from "../utils/helpers"
+import React from 'react'
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { formatReadingTime, countText } from '../utils/helpers';
 
 class PostPage extends React.Component {
   render() {

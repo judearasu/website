@@ -1,8 +1,8 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../components/Layout"
-import get from "lodash/get"
-import { formatReadingTime, countText } from "../utils/helpers"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import get from 'lodash/get';
+import { formatReadingTime, countText } from '../utils/helpers';
 
 class PostIndexPage extends React.Component {
   render() {
