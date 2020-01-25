@@ -34,6 +34,7 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      
       meta={[
         {
           name: `description`,
@@ -67,11 +68,14 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `google-site-verification`,
+          content: `GPcdKFtpoTuYyTOSmBmRfLXqeZ551FGLDCd7wFQPfKU`
+        }
       ].concat(meta)}
     />
   )
 }
-
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
