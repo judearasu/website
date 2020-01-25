@@ -1,38 +1,63 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import get from 'lodash/get';
+import Layout from "../components/Layout"
+import get from "lodash/get"
+import { formatReadingTime, countText } from "../utils/helpers"
 
-class BlogIndexPage extends React.Component {
+class PostIndexPage extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    const posts = get(this, "props.data.allBlogPost.edges")
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title= 'Blog' />
-        <h1>Hi from the blog list1 page</h1>
-        <p>Welcome to about me</p>
-        <Link to="/">Go back to the homepage</Link>
+      <Layout>
+        <main>
+          {posts.map(({ node }) => {
+            const title = get(node, "title") || node.slug
+            return (
+              <article key={node.slug}>
+                <h3>
+                  <Link
+                    style={{ boxShadow: "none", color: "inherit"}}
+                    to={node.slug}
+                    rel="bookmark"
+                  >
+                    {title}
+                  </Link>
+                </h3>
+                <small className="caption">{node.date} {` • ${formatReadingTime(countText(node.body))}`}</small>
+                <p className="caption text--subtitle">{node.excerpt}</p>
+              </article>
+            )
+          })}
+        </main>
       </Layout>
     )
   }
 }
-export default BlogIndexPage
+export default PostIndexPage
 
-export const pageQuery = graphql`
-query {
-  site(siteMetadata: {}) {
-    id
-    siteMetadata {
-      title
-      description
-      siteUrl
-      author
-      navigation{
-        name
-        url
+export const query = graphql`
+  query PostsQueryBlog {
+    site {
+      siteMetadata {
+        title
+        social {
+          name
+          url
+        }
+      }
+    }
+    allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+      edges {
+        node {
+          id
+          excerpt
+          slug
+          title
+          date(formatString: "MMMM DD, YYYY")
+          tags
+          body
+        }
       }
     }
   }
-}`;
-
+`

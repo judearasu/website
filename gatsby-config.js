@@ -8,7 +8,7 @@ module.exports = {
     description: `Personal blog by Thillai Narayanan. I love programming, design, explain with words and code.`,
     siteUrl: "https://overreacted.io",
     author: `Thillai Narayanan`,
-    options: themeDefaults,
+    options: themeOptions,
     navigation: [
       {
         name: `About`,
@@ -31,7 +31,7 @@ module.exports = {
     ],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet`, 
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -78,9 +78,6 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        defaultLayouts: {
-          posts: require.resolve("./src/components/posts-layout.js"),
-        },
       },
     },
     {
@@ -89,15 +86,7 @@ module.exports = {
         name: siteOptions.basePath,
         path: siteOptions.contentPath,
       },
-    },
-    // {
-    //   resolve: `gatsby-theme-blog`,
-    //   options: {
-    //     basePath: `/blog`,
-    //     contentPath: `${__dirname}/src/content/posts`,
-    //     assetPath: `${__dirname}/src/content/assets`
-    //   },
-    // },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

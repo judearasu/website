@@ -3,14 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-
-// You can delete this file if you're not using it
   
 'use strict';
-
-// exports.createSchemaCustomization = require('./node-apis/create-schema');
-// exports.onCreateNode = require('./node-apis/onCreateNode');
-// exports.createPages = require('./node-apis/create-pages');
 
 const fs = require(`fs`)
 const path = require(`path`)
@@ -117,7 +111,6 @@ exports.onCreateNode = async (
   if (node.internal.type !== `Mdx`) {
     return
   }
-
   // Create source field (according to contentPath)
   const fileNode = getNode(node.parent)
   const source = fileNode.sourceInstanceName
@@ -151,7 +144,6 @@ exports.onCreateNode = async (
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
     }
-
     const mdxBlogPostId = createNodeId(`${node.id} >>> MdxBlogPost`)
     await createNode({
       ...fieldData,
@@ -222,3 +214,4 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     context: {},
   })
 }
+

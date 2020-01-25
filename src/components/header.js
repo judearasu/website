@@ -18,12 +18,13 @@ const Header = ({ siteData }) => (
         justifyContent: `space-between`
       }}
     >
-      <h2 style={{ margin: 0 }}>
+      <h2 style={{ margin: 0 ,  color: `inherit`}}>
         <Link
           to="/"
           style={{
             color: `black`,
             textDecoration: `none`,
+            boxShadow: `none`
           }}
         >
           {siteData.title}
@@ -34,7 +35,7 @@ const Header = ({ siteData }) => (
           {siteData.navigation.map((item, index) => (
             // Without the `key`, React will fire a key warning
             <React.Fragment key={index}>
-              <li><Link to={item.url}>{item.name}</Link></li>
+              <li><Link style={{ color: `inherit`, boxShadow: `none`}} to={item.url}>{item.name}</Link></li>
             </React.Fragment>
           ))}
         </ul>
