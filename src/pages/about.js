@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -19,8 +18,8 @@ const AboutPage = () => (
     </p>
     <p>
       If you have any questions or just want to chat, you can reach out to me on
-      <Link to="http://twitter.com/judearasu">Twitter</Link> or shoot me an{" "}
-      <Link to="root@genlinux.org">email</Link>
+      {" "}<a href="http://twitter.com/judearasu">Twitter</a> or shoot me an {" "}
+      <a href="mailto:root@genlinux.org">root@genlinux.org</a>
     </p>
   </Layout>
 )
