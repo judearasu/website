@@ -16,38 +16,46 @@ class PostPage extends React.Component {
         <SEO title={post.title} slug={post.slug} />
         <main>
           <h1>{post.title}</h1>
-          <p className='caption caption--sm'>{post.date}  {` • ${formatReadingTime(countText(post.body))}`}</p>
+          <p className='caption caption--sm'>
+            {/* By <Link
+            to="/"
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`
+            }}>
+            <span className='caption caption--sm'>{post.author}</span></Link> on  */}
+            {post.date}  {` • ${formatReadingTime(countText(post.body))}`}</p>
           <MDXRenderer>{post.body}</MDXRenderer>
-                  </main>
+        </main>
         <nav>
-        <ul
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                listStyle: 'none',
-                padding: 0,
-              }}
-            >
-              <li>
-                {previous && (
-                  <Link
-                    to={previous.slug}
-                    rel="prev"
-                    style={{ marginRight: 20 }}
-                  >
-                    ← {previous.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={next.slug} rel="next">
-                    {next.title} →
-                  </Link>
-                )}
-              </li>
-            </ul>
+          <ul
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              listStyle: 'none',
+              padding: 0,
+            }}
+          >
+            <li>
+              {previous && (
+                <Link
+                  to={previous.slug}
+                  rel="prev"
+                  style={{ marginRight: 20 }}
+                >
+                  ← {previous.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.slug} rel="next">
+                  {next.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
         </nav>
       </Layout>
     )
@@ -75,6 +83,7 @@ export const query = graphql`
       tags
       keywords
       date(formatString: "MMMM DD, YYYY")
+      author
     }
     previous: blogPost(id: { eq: $previousId }) {
       id

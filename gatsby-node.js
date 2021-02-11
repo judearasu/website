@@ -62,6 +62,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       tags: [String]!
       keywords: [String]!
       excerpt: String!
+      author: String!
   }`)
 
   createTypes(
@@ -76,6 +77,9 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
           type: `String!`,
         },
         date: { type: `Date!`, extensions: { dateformat: {} } },
+        author: {
+          type: `String!`,
+        },
         tags: { type: `[String]!` },
         keywords: { type: `[String]!` },
         excerpt: {
@@ -143,6 +147,7 @@ exports.onCreateNode = async (
       slug,
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
+      author: node.frontmatter.author
     }
     const mdxBlogPostId = createNodeId(`${node.id} >>> MdxBlogPost`)
     await createNode({
