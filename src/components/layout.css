@@ -1,5 +1,5 @@
 html {
-	font-family: sans-serif;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
@@ -8,6 +8,7 @@ body {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	color: hsla(0,0%,0%,0.8);
 }
 
 article,
@@ -77,7 +78,7 @@ dfn {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 2.5rem;
 	margin: 0.67em 0;
 }
 
@@ -283,7 +284,7 @@ h1 {
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	line-height: 1.1;
 }
 

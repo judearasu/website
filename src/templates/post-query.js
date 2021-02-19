@@ -4,12 +4,19 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { formatReadingTime, countText } from '../utils/helpers';
+import { Disqus } from 'gatsby-plugin-disqus'
 
 class PostPage extends React.Component {
   render() {
     const post = this.props.data.blogPost
     const previous = this.props.data.previous
     const next = this.props.data.next
+    let disqusConfig = {
+      url: `${this.props.data.site.siteMetadata.siteUrl}`,
+      identifier: post.id,
+      title: post.title,
+    }
+    console.log(disqusConfig);
     // let { previous, next, slug } = this.props.pageContext
     return (
       <Layout>
@@ -57,6 +64,7 @@ class PostPage extends React.Component {
             </li>
           </ul>
         </nav>
+        <Disqus config={disqusConfig} />
       </Layout>
     )
   }
@@ -68,6 +76,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
         social {
           name
           url

@@ -23,6 +23,7 @@ My intial videos are about coding challenges on Javascript and material design s
 
 Screen recorder, OBS, Canvaa, Adobe spark are the tools which i used for my youtube videos. 
 
+### Thoughts
 Learning is an art and i find the streaming videos helps me to learn and know about the new technologies and challenges.
 
 
