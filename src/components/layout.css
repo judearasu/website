@@ -751,3 +751,29 @@ ul.react-menu li a:hover{
 .text--subtitle {
 	font-size: 0.85rem;
 }
+.content{
+	display: flex;
+    flex-direction: column;
+    flex: 1 auto;
+    align-items: center;
+	margin: 0;
+	min-height: calc(100vh - 150px);
+}
+.social{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.badge{
+	padding: 0 1rem;
+}
+
+.badge a{
+	box-shadow: none;
+}
+
+footer{
+	display: flex;
+	justify-content:center;
+}
