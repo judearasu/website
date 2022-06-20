@@ -756,7 +756,8 @@ ul.react-menu li a:hover{
 	display: flex;
     flex-direction: column;
     flex: 1 auto;
-    align-items: center;
+	align-items: center;
+	/* justify-content: center; */
 	margin: 0;
 	min-height: calc(100vh - 150px);
 }
@@ -778,3 +779,9 @@ footer{
 	display: flex;
 	justify-content:center;
 }
+
+/** Substack **/
+.newsletter .embed-page .publication-name {
+	display: none;
+}
+

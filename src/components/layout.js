@@ -39,9 +39,10 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }} className="content"
       >
-
         <main>{children}</main>
-
+        {/* <div className="newsletter">
+          <iframe src="https://rooton.substack.com/embed" width="480" height="320" frameBorder="0" scrolling="no"></iframe>
+        </div> */}
       </div>
       <footer>
         © {new Date().getFullYear()}, Built with  <a href="https://www.gatsbyjs.org"> Gatsby</a>
