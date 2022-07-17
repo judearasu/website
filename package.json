@@ -24,7 +24,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "sanitize-html": "^1.21.1"
+    "sanitize-html": "^2.3.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
