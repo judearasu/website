@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Root 🐎`,
     description: `Personal blog by Thillai Narayanan. I love programming, design, explain with words and code.`,
-    siteUrl: "https://overreacted.io",
+    siteUrl: "https://root.genlinux.org/",
     author: `Thillai Narayanan`,
     options: themeOptions,
     navigation: [
@@ -31,7 +31,7 @@ module.exports = {
     ],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`, 
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,7 +50,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/ride.jpg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -86,7 +86,13 @@ module.exports = {
         name: siteOptions.basePath,
         path: siteOptions.contentPath,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `https-root-genlinux-org`
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
